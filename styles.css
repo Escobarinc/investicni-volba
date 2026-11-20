@@ -187,3 +187,8 @@ p { margin: 0 0 1em; }
   .form-card { padding: 24px 18px; }
   .btn { width: 100%; }
 }
+
+/* Mobil: méně textu, kratší rolování */
+@media (max-width: 600px) {
+  .hide-mobile { display: none !important; }
+}
