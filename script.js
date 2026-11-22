@@ -1,6 +1,5 @@
 // Formulář na landing page Investiční volba.
-// Po odeslání se kontakt předá do CRM (pokud je na stránce měřicí skript CLARIX
-// s window.clarixTrack) a zobrazí se odkaz na stažení PDF z atributu data-pdf.
+// Po odeslání se kontakt předá do CRM (crm.js) a zobrazí se odkaz na stažení PDF z atributu data-pdf.
 
 const form = document.getElementById('leadForm');
 const thanks = document.getElementById('thanks');
@@ -47,7 +46,7 @@ form.addEventListener('submit', async (e) => {
   btn.textContent = 'Odesílám…';
 
   try {
-    if (window.clarixTrack?.lead) await window.clarixTrack.lead(lead);
+    await window.IV_CRM.sendLead(lead);
   } catch (err) {
     console.error('Odeslání kontaktu do CRM selhalo', err);
   }
