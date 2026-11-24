@@ -3,7 +3,6 @@
    Odmítnutí nijak neomezuje formuláře ani stažení PDF. */
 (() => {
   'use strict';
-  const BASE = new URL('.', document.currentScript ? document.currentScript.src : location.href).href;
   const KEY = 'iv-cookies', VERZE = '2026-11-24', PLATNOST = 365 * 864e5;
   // Jen skutečně nasazené technologie: název, poskytovatel, účel, doba platnosti.
   const INVENTAR = {
@@ -45,7 +44,7 @@
   const cat = (id, title, text) => `<div class="ck-cat"><div class="ck-cat-head">${id === 'nezbytne'
     ? '<span class="ck-always">Vždy aktivní</span>'
     : `<label class="ck-switch"><input type="checkbox" data-ck="${id}"><i aria-hidden="true"></i><span class="sr-only">Povolit: ${title}</span></label>`}<div><b>${title}</b><small>${text}</small></div></div><details class="ck-details"><summary>Seznam technologií</summary>${rows(INVENTAR[id])}</details></div>`;
-  const LINKS = `<a href="${BASE}zasady-cookies.html">Zásadách používání cookies</a> a <a href="${BASE}zasady-ochrany-osobnich-udaju.html">Zásadách ochrany osobních údajů</a>`;
+  const LINKS = `<a href="zasady-cookies.html">Zásadách používání cookies</a> a <a href="zasady-ochrany-osobnich-udaju.html">Zásadách ochrany osobních údajů</a>`;
 
   const bar = document.createElement('section');
   bar.className = 'ck-bar'; bar.hidden = true;
