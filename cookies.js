@@ -50,9 +50,9 @@
   bar.className = 'ck-bar'; bar.hidden = true;
   bar.setAttribute('role', 'dialog'); bar.setAttribute('aria-labelledby', 'ck-title');
   bar.innerHTML = `<div class="ck-inner">
-    <div class="ck-l1"><h2 id="ck-title">Nastavení soukromí</h2><p>Pro fungování webu používáme nezbytné technologie. S vaším souhlasem také měříme návštěvnost, abychom web mohli zlepšovat. Podrobnosti najdete v ${LINKS}.</p></div>
+    <div class="ck-l1"><p><strong id="ck-title">Nastavení soukromí.</strong> Používáme nezbytné technologie a s vaším souhlasem i měření návštěvnosti. Více v <a href="zasady-cookies.html">Zásadách cookies</a> a <a href="zasady-ochrany-osobnich-udaju.html">Zásadách ochrany osobních údajů</a>.</p></div>
     <div class="ck-l2" hidden><div class="ck-grid">${cat('nezbytne', 'Nezbytné', 'Fungování webu a uložení vaší volby. Bez souhlasu, jen v nezbytném rozsahu.')}${cat('analyticke', 'Analytické', 'Měření návštěvnosti a používání stránek. Pouze se souhlasem.')}${cat('marketingove', 'Marketingové', 'Měření účinnosti reklam. Zatím nepoužíváme.')}</div><p class="ck-docs">Podrobnosti v ${LINKS}.</p></div>
-    <div class="ck-actions"><button type="button" class="ck-btn" data-ck-act="none">Odmítnout vše</button><button type="button" class="ck-btn" data-ck-act="settings">Nastavení</button><button type="button" class="ck-btn" data-ck-act="save" hidden>Uložit nastavení</button><button type="button" class="ck-btn" data-ck-act="all">Přijmout vše</button></div>
+    <div class="ck-actions"><button type="button" class="ck-btn ck-btn--ghost" data-ck-act="settings">Nastavení</button><button type="button" class="ck-btn ck-btn--ghost" data-ck-act="save" hidden>Uložit volbu</button><button type="button" class="ck-btn" data-ck-act="none">Odmítnout vše</button><button type="button" class="ck-btn" data-ck-act="all">Přijmout vše</button></div>
     <button type="button" class="ck-handle" aria-label="Skrýt nastavení soukromí" hidden></button></div>`;
   const tab = document.createElement('button');
   tab.type = 'button'; tab.className = 'ck-tab'; tab.hidden = true; tab.setAttribute('aria-label', 'Nastavení cookies');
