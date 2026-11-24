@@ -251,3 +251,17 @@ p { margin: 0 0 1em; }
 .secure a { color: var(--green); font-weight: 700; }
 .foot-grid--lp { grid-template-columns: 1.4fr 1fr; }
 .site-foot span.logo { cursor: default; }
+
+/* Okno s právními dokumenty na landing page */
+.lm-open, .lm-open body { overflow: hidden; }
+.lm-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(16,30,22,.55); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.lm-backdrop[hidden] { display: none; }
+.lm-dialog { background: #fff; border-radius: 16px; width: min(820px, 100%); max-height: min(86vh, 900px); display: flex; flex-direction: column; box-shadow: 0 30px 80px rgba(0,0,0,.3); outline: none; }
+.lm-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 26px; border-bottom: 1px solid var(--line); }
+.lm-head h2 { margin: 0; font-size: 1.5rem; }
+.lm-close { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.lm-close:hover { background: var(--green); color: #fff; border-color: var(--green); }
+.lm-body { overflow: auto; padding: 4px 26px 26px; }
+.lm-body.legal { padding: 4px 26px 26px; }
+.lm-body h2:first-of-type { margin-top: 18px; }
+@media (max-width: 600px) { .lm-backdrop { padding: 0; align-items: flex-end; } .lm-dialog { border-radius: 16px 16px 0 0; max-height: 92vh; } .lm-head { padding: 16px 18px; } .lm-body.legal { padding: 0 18px 22px; } .lm-head h2 { font-size: 1.2rem; } }

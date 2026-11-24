@@ -83,9 +83,13 @@
   tab.addEventListener('click', () => open(true));
   document.addEventListener('click', (e) => { if (e.target.closest('[data-open-cookies]')) { e.preventDefault(); open(true); } });
 
-  const inv = document.querySelector('[data-ck-inventory]');
-  if (inv) inv.innerHTML = [['nezbytne', 'Nezbytné'], ['analyticke', 'Analytické'], ['marketingove', 'Marketingové']]
-    .map(([k, t]) => `<h3>${t}</h3>${rows(INVENTAR[k])}`).join('');
+  // Přehled technologií na stránce Zásady cookies (i v okně nad landing page – legal-modal.js).
+  window.ivFillInventory = (root) => {
+    const inv = (root || document).querySelector('[data-ck-inventory]');
+    if (inv) inv.innerHTML = [['nezbytne', 'Nezbytné'], ['analyticke', 'Analytické'], ['marketingove', 'Marketingové']]
+      .map(([k, t]) => `<h3>${t}</h3>${rows(INVENTAR[k])}`).join('');
+  };
+  window.ivFillInventory();
 
   const c = read();
   if (c) { apply(c, null); tab.hidden = false; } else { window.ivConsent = null; open(false); }
