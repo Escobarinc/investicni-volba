@@ -1,15 +1,18 @@
 /* Investiční volba — napojení na CLARIX CRM (měření návštěv a poptávky z formulářů).
- * Klíč webu je z CRM: Weby a měření. Měřicí kód se načte při každé návštěvě. */
+ * Klíč webu je z CRM: Weby a měření. Měřicí kód se načte jen se souhlasem s analytickými cookies. */
 (() => {
   'use strict';
   const CRM = { origin: 'https://clarix-crm.onrender.com', key: 'uo0kpF62LD-5RCHJ' };
-  if (!document.getElementById('crm-t')) {
+  // Měřicí kód je analytická technologie – načte se až po souhlasu s analytickými cookies (cookies.js).
+  // Poptávky z formulářů se posílají i bez souhlasu, přímo a bez měření.
+  window.loadCrmTracking = () => {
+    if (document.getElementById('crm-t')) return;
     const t = document.createElement('script');
     t.id = 'crm-t';
     t.async = true;
     t.src = `${CRM.origin}/api/t.js?k=${encodeURIComponent(CRM.key)}`;
     document.head.appendChild(t);
-  }
+  };
   // Odeslání poptávky: přes měřicí kód (spáruje návštěvu s leadem), a když se nenačetl, přímo.
   async function sendLead(data) {
     if (window.clarixTrack?.lead) {
