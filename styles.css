@@ -265,3 +265,5 @@ p { margin: 0 0 1em; }
 .lm-body.legal { padding: 4px 26px 26px; }
 .lm-body h2:first-of-type { margin-top: 18px; }
 @media (max-width: 600px) { .lm-backdrop { padding: 0; align-items: flex-end; } .lm-dialog { border-radius: 16px 16px 0 0; max-height: 92vh; } .lm-head { padding: 16px 18px; } .lm-body.legal { padding: 0 18px 22px; } .lm-head h2 { font-size: 1.2rem; } }
+.form-error { margin: 12px 0 0; padding: 10px 14px; border-radius: 8px; background: #fbeceb; color: var(--err); font-size: .9rem; font-weight: 600; }
+.form-error a { color: var(--err); }
